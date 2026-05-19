@@ -40,8 +40,19 @@ export default function Teams() {
 
   const fetchTeams = () => {
     setIsLoading(true);
-    fetch(apiUrl)
-      .then((response) => response.json())
+    fetch(apiUrl, { cache: "no-store" })
+      .then(async (response) => {
+        const contentType = response.headers.get("content-type") || "";
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(`HTTP ${response.status} ${response.statusText}: ${text || "No response body"}`);
+        }
+        if (!contentType.includes("application/json")) {
+          const text = await response.text();
+          throw new Error(`Expected JSON response but received: ${text.slice(0, 300)}`);
+        }
+        return response.json();
+      })
       .then((data) => {
         console.log("Teams endpoint:", apiUrl);
         console.log("Teams fetched data:", data);
