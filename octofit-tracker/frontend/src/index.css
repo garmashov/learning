@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #eef2f7;
+  color: #212529;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  background: #eef2f7;
+}
+
+.navbar-brand {
+  letter-spacing: 0.01em;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  z-index: 1040;
+}
+
+.modal {
+  z-index: 1050;
+}
+
+.text-muted small {
+  font-size: 0.9rem;
+}
