@@ -27,7 +27,7 @@ DEBUG = True
 
 import os
 CODESPACE_NAME = os.environ.get('CODESPACE_NAME')
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver', '0.0.0.0']
 if CODESPACE_NAME:
     ALLOWED_HOSTS.append(f'{CODESPACE_NAME}-8000.app.github.dev')
     ALLOWED_HOSTS.append(f'{CODESPACE_NAME}.github.dev')
