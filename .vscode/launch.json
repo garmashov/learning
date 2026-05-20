@@ -20,11 +20,10 @@
       "name": "Launch React Frontend",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceFolder}/octofit-tracker/frontend/node_modules/react-scripts/scripts/start.js",
       "cwd": "${workspaceFolder}/octofit-tracker/frontend",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["start"],
-      "port": 3000,
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
       "env": {
         "REACT_APP_CODESPACE_NAME": "${env:CODESPACE_NAME}"
       }
