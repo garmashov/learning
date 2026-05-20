@@ -1,10 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 
-const endpoint = "workouts";
 const codespaceName = import.meta.env.VITE_REACT_APP_CODESPACE_NAME || import.meta.env.REACT_APP_CODESPACE_NAME;
 const apiUrl = codespaceName
-  ? `https://${codespaceName}-8000.app.github.dev/api/${endpoint}/`
-  : `/api/${endpoint}/`;
+  ? `https://${codespaceName}-8000.app.github.dev/api/workouts/`
+  : `/api/workouts/`;
 
 const normalizeData = (data) => {
   if (Array.isArray(data)) return data;
